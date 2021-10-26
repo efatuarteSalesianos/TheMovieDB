@@ -37,10 +37,14 @@ export class MoviesPopularListComponent implements OnInit {
   }
 
   getMoviesByGenre() {
-    console.log(this.genreSelected);
     if(this.genreSelected)
       this.MovieService.getMoviesByGenre(this.genreSelected.id).subscribe(resultado => {
         this.moviesGenre = resultado.results;
       })
   }
+
+  /* getMoviesByGenre2() {
+    if(this.genreSelected)
+      this.moviesGenre = this.moviesPopularList?.filter(movie => movie.genre_ids.includes(this.genreSelected.id));
+  } */
 }
