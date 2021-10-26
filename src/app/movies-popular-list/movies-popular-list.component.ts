@@ -1,6 +1,7 @@
 import { MovieService } from '../services/movie.service';
 import { MoviesPopular } from '../model/interfaces/movies-popular.interface';
 import { Component, OnInit } from '@angular/core';
+import { GenreService } from '../services/genre.service';
 
 @Component({
   selector: 'app-movies-popular-list',
