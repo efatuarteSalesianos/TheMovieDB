@@ -1,11 +1,11 @@
 export interface MoviesPopularResponse {
   page: number;
-  results: MoviesPopular[];
+  results: Movie[];
   total_pages: number;
   total_results: number;
 }
 
-export interface MoviesPopular {
+export interface Movie {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];

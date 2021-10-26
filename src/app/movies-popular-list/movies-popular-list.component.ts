@@ -1,5 +1,6 @@
+import { Genre } from './../model/interfaces/genres.interface';
 import { MovieService } from '../services/movie.service';
-import { MoviesPopular } from '../model/interfaces/movies-popular.interface';
+import { Movie } from '../model/interfaces/movies-popular.interface';
 import { Component, OnInit } from '@angular/core';
 import { GenreService } from '../services/genre.service';
 
@@ -10,7 +11,11 @@ import { GenreService } from '../services/genre.service';
 })
 export class MoviesPopularListComponent implements OnInit {
 
-  moviesPopularList: MoviesPopular[] | undefined;
+  moviesPopularList: Movie[] | undefined;
+
+  genre= '';
+
+  moviesGenre: Movie[] | undefined;
 
   constructor(private MovieService: MovieService) { }
 
@@ -22,6 +27,14 @@ export class MoviesPopularListComponent implements OnInit {
     this.MovieService.getPopularMovies().subscribe(resultado => {
       this.moviesPopularList = resultado.results;
     })
+  }
+
+  getMoviesByGenre(genre: Genre): Movie[] {
+    this.moviesGenre = this.moviesPopularList?.filter( movie => movie.genre_ids.includes(genre.id));
+    if(this.moviesGenre)
+      return this.moviesGenre;
+    else
+      return [];
   }
 
 }
