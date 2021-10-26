@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { MoviesPopular } from '../model/interfaces/movies-popular.interface';
 import { Component, Input, OnInit } from '@angular/core';
 @Component({
@@ -17,7 +18,7 @@ export class MovieItemComponent implements OnInit {
   getPhotoUrl(url: string | undefined): string {
     if(url) {
       let photo = this.movieInput?.backdrop_path;
-      return `https://www.themoviedb.org/t/p/w220_and_h330_face${photo}`;
+      return `${environment.img_base_url}${photo}`;
     } else {
       return '';
     }
