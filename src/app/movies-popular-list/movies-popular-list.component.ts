@@ -1,13 +1,13 @@
-import { MovieService } from './../services/movie.service';
-import { Movie } from './../model/interfaces/movie.interface';
+import { MovieService } from '../services/movie.service';
+import { Movie } from '../model/interfaces/movie.interface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-movie-list',
-  templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.css']
+  selector: 'app-movies-popular-list',
+  templateUrl: './movies-popular-list.component.html',
+  styleUrls: ['./movies-popular-list.component.css']
 })
-export class MovieListComponent implements OnInit {
+export class MoviesPopularListComponent implements OnInit {
 
   moviesPopularList: Movie[] | undefined;
 
