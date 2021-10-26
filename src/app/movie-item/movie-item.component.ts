@@ -17,7 +17,7 @@ export class MovieItemComponent implements OnInit {
 
   getPhotoUrl(url: string | undefined): string {
     if(url) {
-      let photo = this.movieInput?.backdrop_path;
+      let photo = this.movieInput?.poster_path;
       return `${environment.img_base_url}${photo}`;
     } else {
       return '';
