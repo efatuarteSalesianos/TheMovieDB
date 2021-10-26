@@ -29,7 +29,6 @@ export class PeoplePopularItemComponent implements OnInit {
   getKnowFor(): KnownFor[] {
     if(this.peopleInput) {
       let movies = this.peopleInput?.known_for;
-      console.log("PELICULAS:" + movies);
       return movies;
     } else {
       return [];

@@ -15,8 +15,8 @@ export class MovieItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getPhotoUrl(url: string | undefined): string {
-    if(url) {
+  getPhotoUrl(): string {
+    if(this.movieInput) {
       let photo = this.movieInput?.poster_path;
       return `${environment.img_base_url}${photo}`;
     } else {

@@ -4,7 +4,7 @@
         <mat-card-title>{{movieInput?.title}}</mat-card-title>
         <mat-card-subtitle>{{movieInput?.release_date}}</mat-card-subtitle>
     </mat-card-header>
-    <img class="image" [src]='getPhotoUrl(movieInput?.poster_path)' [alt]='(movieInput?.title)'>
+    <img class="image" [src]='getPhotoUrl()' [alt]='(movieInput?.title)'>
     <mat-card-content>
         <p>
             {{movieInput?.overview}}
