@@ -14,17 +14,16 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Género</mat-label>
                     <mat-select [(value)]="genreSelected" [(ngModel)]="genreSelected" (selectionChange)="(getMoviesByGenre())">
-                        <mat-option *ngFor="let genre of genreList" [value]="genre.name">
+                        <mat-option *ngFor="let genre of genreList" [value]="genre">
                             {{genre.name}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
-                <p>Mostrando las películas más populares de {{genreSelected}}</p>
+                <p>Mostrando las películas más populares de {{genreSelected?.name}}</p>
             </div>
         </div>
         <div class="row">
             <h2>Películas más populares:</h2>
-
             <div class="row" *ngIf="!moviesGenre">
                 <div class="col-3" *ngFor="let movie of moviesPopularList">
                     <app-movie-item [movieInput]="movie"></app-movie-item>

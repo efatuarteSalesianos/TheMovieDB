@@ -22,7 +22,6 @@ export class MoviesPopularListComponent implements OnInit {
   ngOnInit(): void {
     this.getMoviesPopularList();
     this.getGenresList();
-    this.getMoviesByGenre();
   }
 
   getMoviesPopularList() {
@@ -38,12 +37,10 @@ export class MoviesPopularListComponent implements OnInit {
   }
 
   getMoviesByGenre() {
-    if(this.genreSelected) {
-      let id2 = this.genreSelected?.id;
-      let id = 27;
-      this.MovieService.getMoviesByGenre(id).subscribe(resultado => {
+    console.log(this.genreSelected);
+    if(this.genreSelected)
+      this.MovieService.getMoviesByGenre(this.genreSelected.id).subscribe(resultado => {
         this.moviesGenre = resultado.results;
       })
-    }
   }
 }
