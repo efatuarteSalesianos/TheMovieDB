@@ -1,5 +1,5 @@
 import { MovieService } from '../services/movie.service';
-import { Movie } from '../model/interfaces/movie.interface';
+import { MoviesPopular } from '../model/interfaces/movies-popular.interface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesPopularListComponent implements OnInit {
 
-  moviesPopularList: Movie[] | undefined;
+  moviesPopularList: MoviesPopular[] | undefined;
 
   constructor(private MovieService: MovieService) { }
 

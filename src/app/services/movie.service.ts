@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from './../../environments/environment.prod';
 import { Observable } from 'rxjs';
-import { MoviesPopularResponse } from '../model/interfaces/movie.interface';
+import { MoviesPopularResponse } from '../model/interfaces/movies-popular.interface';
 
 const MOVIE_BASE_URL = 'movie';
 const DEFAULT_HEADERS = {

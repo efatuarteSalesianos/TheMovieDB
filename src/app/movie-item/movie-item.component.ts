@@ -1,4 +1,4 @@
-import { Movie } from './../model/interfaces/movie.interface';
+import { MoviesPopular } from '../model/interfaces/movies-popular.interface';
 import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-movie-item',
@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MovieItemComponent implements OnInit {
 
-  @Input() movieInput: Movie | undefined;
+  @Input() movieInput: MoviesPopular | undefined;
 
   constructor() { }
 
