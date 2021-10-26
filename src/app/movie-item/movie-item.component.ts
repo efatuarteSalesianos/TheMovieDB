@@ -23,5 +23,4 @@ export class MovieItemComponent implements OnInit {
       return '';
     }
   }
-
 }
