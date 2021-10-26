@@ -1,7 +1,7 @@
-import { KnownFor } from './../model/interfaces/people-popular.interface';
+import { KnownFor } from './../../model/interfaces/people-popular.interface';
 import { Component, Input, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
-import { PeoplePopular } from '../model/interfaces/people-popular.interface';
+import { PeoplePopular } from '../../model/interfaces/people-popular.interface';
 
 @Component({
   selector: 'app-people-popular-item',

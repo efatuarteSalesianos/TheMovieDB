@@ -20,7 +20,7 @@ export class GenreService {
   constructor(private http: HttpClient) { }
 
   getGenres(): Observable<GenreResponse> {
-    let url = `${this.genreBaseUrl}/?api_key=${environment.api_key}&language=${environment.lang}`;
+    let url = `${environment.api_base_url}/${GENRE_BASE_URL}?api_key=${environment.api_key}&language=${environment.lang}`;
     return this.http.get<GenreResponse>(url, DEFAULT_HEADERS);
   }
 }

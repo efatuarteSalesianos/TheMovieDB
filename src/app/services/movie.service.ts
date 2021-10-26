@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from './../../environments/environment.prod';
 import { Observable } from 'rxjs';
 import { MoviesPopularResponse } from '../model/interfaces/movies-popular.interface';
+import { identifierModuleUrl } from '@angular/compiler';
 
 const MOVIE_BASE_URL = 'movie';
 const DEFAULT_HEADERS = {
@@ -21,6 +22,11 @@ export class MovieService {
 
   getPopularMovies(): Observable<MoviesPopularResponse> {
     let url = `${this.movieBaseUrl}/popular/?api_key=${environment.api_key}&language=${environment.lang}`;
+    return this.http.get<MoviesPopularResponse>(url, DEFAULT_HEADERS);
+  }
+
+  getMoviesByGenre(id: number): Observable<MoviesPopularResponse> {
+    let url = `${environment.api_base_url}/discover/movie/?api_key=${environment.api_key}&language=${environment.lang}&with_genres=${id}`;
     return this.http.get<MoviesPopularResponse>(url, DEFAULT_HEADERS);
   }
 }

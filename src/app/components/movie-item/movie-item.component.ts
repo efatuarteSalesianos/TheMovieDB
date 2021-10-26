@@ -1,5 +1,5 @@
-import { environment } from './../../environments/environment';
-import { Movie } from '../model/interfaces/movies-popular.interface';
+import { environment } from './../../../environments/environment';
+import { Movie } from '../../model/interfaces/movies-popular.interface';
 import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-movie-item',

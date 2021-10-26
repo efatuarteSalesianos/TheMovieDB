@@ -7,15 +7,19 @@ import { AppComponent } from './app.component';
 import { MaterialImportsModule } from './modules/material-imports.module';
 
 import { HttpClientModule } from '@angular/common/http';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { MoviesPopularListComponent } from './movies-popular-list/movies-popular-list.component';
-import { MovieItemComponent } from './movie-item/movie-item.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { MoviesPopularListComponent } from './components/movies-popular-list/movies-popular-list.component';
+import { MovieItemComponent } from './components/movie-item/movie-item.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { PeoplePopularListComponent } from './components/people-popular-list/people-popular-list.component';
+import { PeoplePopularItemComponent } from './components/people-popular-item/people-popular-item.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { PeoplePopularListComponent } from './people-popular-list/people-popular-list.component';
-import { PeoplePopularItemComponent } from './people-popular-item/people-popular-item.component';
+
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +37,7 @@ import { PeoplePopularItemComponent } from './people-popular-item/people-popular
     MaterialImportsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
     NgCircleProgressModule.forRoot({
       "backgroundStrokeWidth": 0,
       "backgroundPadding": 2,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PeoplePopular } from '../model/interfaces/people-popular.interface';
-import { PeopleService } from '../services/people.service';
+import { PeoplePopular } from '../../model/interfaces/people-popular.interface';
+import { PeopleService } from '../../services/people.service';
 
 @Component({
   selector: 'app-people-popular-list',

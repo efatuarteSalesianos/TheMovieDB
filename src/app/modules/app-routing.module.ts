@@ -1,8 +1,9 @@
-import { MoviesPopularListComponent } from '../movies-popular-list/movies-popular-list.component';
-import { PageNotFoundComponent } from './../page-not-found/page-not-found.component';
+import { MoviesPopularListComponent } from '../components/movies-popular-list/movies-popular-list.component';
+import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
+import { PeoplePopularListComponent } from '../components/people-popular-list/people-popular-list.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PeoplePopularListComponent } from '../people-popular-list/people-popular-list.component';
 
 const routes: Routes = [
   { path: 'movies-popular', component: MoviesPopularListComponent },
