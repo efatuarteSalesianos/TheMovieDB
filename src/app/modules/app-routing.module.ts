@@ -2,9 +2,11 @@ import { MoviesPopularListComponent } from '../movies-popular-list/movies-popula
 import { PageNotFoundComponent } from './../page-not-found/page-not-found.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PeoplePopularListComponent } from '../people-popular-list/people-popular-list.component';
 
 const routes: Routes = [
   { path: 'movies-popular', component: MoviesPopularListComponent },
+  { path: 'people-popular', component: PeoplePopularListComponent },
   { path: '',   redirectTo: '/movies-popular', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

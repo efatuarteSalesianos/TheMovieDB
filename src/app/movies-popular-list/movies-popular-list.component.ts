@@ -20,7 +20,6 @@ export class MoviesPopularListComponent implements OnInit {
   getMoviesPopularList() {
     this.MovieService.getPopularMovies().subscribe(resultado => {
       this.moviesPopularList = resultado.results;
-      console.log(this.moviesPopularList)
     })
   }
 

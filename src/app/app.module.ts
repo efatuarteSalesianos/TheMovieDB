@@ -14,6 +14,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { PeoplePopularListComponent } from './people-popular-list/people-popular-list.component';
+import { PeoplePopularItemComponent } from './people-popular-item/people-popular-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     PageNotFoundComponent,
     MoviesPopularListComponent,
     MovieItemComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    PeoplePopularListComponent,
+    PeoplePopularItemComponent
   ],
   imports: [
     BrowserModule,
