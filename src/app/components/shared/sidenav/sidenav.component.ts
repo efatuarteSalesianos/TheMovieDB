@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
+  currentPage = 'movies-popular';
+
   constructor() { }
 
   ngOnInit(): void {
