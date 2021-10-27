@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { MoviesPopularListComponent } from './components/movies-popular-list/movies-popular-list.component';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { ToolbarComponent } from './components/shared/toolbar/toolbar.component';
 import { PeoplePopularListComponent } from './components/people-popular-list/people-popular-list.component';
 import { PeoplePopularItemComponent } from './components/people-popular-item/people-popular-item.component';
 
@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import { FormsModule } from '@angular/forms';
+import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     MovieItemComponent,
     ToolbarComponent,
     PeoplePopularListComponent,
-    PeoplePopularItemComponent
+    PeoplePopularItemComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
