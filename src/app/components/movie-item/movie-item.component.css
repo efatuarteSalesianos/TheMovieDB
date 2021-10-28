@@ -1,14 +1,11 @@
 .example-card {
-    margin-bottom: 5%;
-}
-
-.example-header-image {
-    background-size: cover;
+    margin-bottom: 10%;
+    background-color: #F6F6F6;
 }
 
 .image {
-    margin-left: 12%;
+    margin-top: 3%;
+    margin-left: -7%;
     margin-bottom: 5%;
-    max-width: 70%;
-    max-height: 70%;
+    max-height: 450px;
 }

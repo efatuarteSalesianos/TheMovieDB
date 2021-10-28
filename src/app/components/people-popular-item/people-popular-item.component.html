@@ -5,8 +5,8 @@
     </mat-card-header>
     <img class="image" [src]='getPhotoUrl(peopleInput?.profile_path)' [alt]='(peopleInput?.name)'>
     <mat-card-content>
-        <p><b>Votos Recibidos</b>: {{peopleInput?.popularity}}</p>
-        <p><b>Papeles destacados</b>: <span *ngFor="let movie of getKnowFor()">{{movie.title}}, </span></p>
+        <p><strong>Votos Recibidos</strong>: {{peopleInput?.popularity}}</p>
+        <p><strong>Papeles destacados</strong>: <span *ngFor="let movie of getKnowFor()">{{movie.title}}, </span></p>
     </mat-card-content>
     <mat-card-actions>
         <button mat-button color="primary">VER MÁS</button>

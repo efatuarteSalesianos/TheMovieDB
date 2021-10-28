@@ -10,9 +10,9 @@ import { MovieDetailDialogComponent } from '../dialogs/movie-detail-dialog/movie
 })
 export class MovieItemComponent implements OnInit {
 
-  @Input() movieInput: Movie | undefined;
+  @Input() movieInput!: Movie;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -27,13 +27,9 @@ export class MovieItemComponent implements OnInit {
   }
 
   openDialogMovieDetail(id: number | undefined) {
-    const dialogRef = this.dialog.open(MovieDetailDialogComponent, {
+    this.dialog.open(MovieDetailDialogComponent, {
       width: '500px',
-      data: ''
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      //Aqui van las acciones que se ejecutan cuando se cierra el cuadro de diálogo
+      data: { movieId: this.movieInput?.id }
     });
   }
 
