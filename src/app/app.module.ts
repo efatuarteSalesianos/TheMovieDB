@@ -22,7 +22,6 @@ import { FormsModule } from '@angular/forms';
 import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +54,9 @@ import { DialogComponent } from './components/dialog/dialog.component';
       "titleColor": "#000000",
       "showSubtitle": false
     })
+  ],
+  entryComponents: [
+    DialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

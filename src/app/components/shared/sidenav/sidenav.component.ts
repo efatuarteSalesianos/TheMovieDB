@@ -20,7 +20,7 @@ export class SidenavComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('Se ha cerrado el cuadro de diálogo');
+      //Aqui van las acciones que se ejecutan cuando se cierra el cuadro de diálogo
     });
   }
 
