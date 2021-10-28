@@ -20,6 +20,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import { FormsModule } from '@angular/forms';
 import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { SidenavComponent } from './components/shared/sidenav/sidenav.component'
     ToolbarComponent,
     PeoplePopularListComponent,
     PeoplePopularItemComponent,
-    SidenavComponent
+    SidenavComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

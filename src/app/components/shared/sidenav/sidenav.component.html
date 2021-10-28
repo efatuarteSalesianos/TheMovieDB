@@ -20,7 +20,7 @@
     <mat-sidenav-content>
         <mat-toolbar color="primary">
             <mat-toolbar-row>
-                <button mat-icon-button color="accent" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+                <button mat-icon-button color="accent" (click)="sidenav.toggle()" (click)="openDialog()"><mat-icon>menu</mat-icon></button>
                 <span>MovieDB</span>
                 <span class="example-spacer"></span>
                 <ng-container [ngSwitch]="currentPage">
