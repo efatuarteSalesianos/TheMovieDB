@@ -1,0 +1,17 @@
+<mat-dialog-content class="mat-typography">
+    <h2>Titulo de la película</h2>
+    <p><b>Fecha de Salida:</b> 21 de Enero de 2021</p>
+    <p><b>Duración:</b> 100 minutos</p>
+    <p><b>Presupuesto: </b> 100 millones de dólares</p>
+    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/wDkaC7K1LNg6sjESooYpNHKyd3N.jpg">
+    <p><b>Descripción: </b></p>
+    <p>El hijo de una familia noble trata de vengarse de la muerte de su padre al mismo tiempo que salva un planeta rico en especias que se le encomienda proteger. Nueva adaptación al cine de las novelas de Frank Herbert, que ya fueron trasladadas a la gran
+        pantalla por David Lynch en 1984.</p>
+    <p><span><b>Valoración: </b></span>7.1</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button color="primary" mat-dialog-close>Cancelar</button>
+    <button mat-button color="accent" [mat-dialog-close]="true" cdkFocusInitial>
+    Guardar
+  </button>
+</mat-dialog-actions>

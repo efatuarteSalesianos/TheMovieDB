@@ -20,7 +20,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import { FormsModule } from '@angular/forms';
 import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
-import { DialogComponent } from './components/dialog/dialog.component';
+import { MovieDetailDialogComponent } from './components/dialogs/movie-detail-dialog/movie-detail-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
     PeoplePopularListComponent,
     PeoplePopularItemComponent,
     SidenavComponent,
-    DialogComponent
+    MovieDetailDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +56,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
     })
   ],
   entryComponents: [
-    DialogComponent
+    MovieDetailDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
