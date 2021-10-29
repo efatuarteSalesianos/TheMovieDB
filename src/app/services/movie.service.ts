@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from './../../environments/environment.prod';
 import { Observable } from 'rxjs';
 import { MoviesPopularResponse } from '../model/interfaces/movies-popular.interface';
-import { identifierModuleUrl } from '@angular/compiler';
 import { MovieResponse } from '../model/interfaces/movie.interface';
 
 const MOVIE_BASE_URL = 'movie';

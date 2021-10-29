@@ -12,7 +12,7 @@
             <div class="col-4">
                 <mat-form-field appearance="fill">
                     <mat-label>Género</mat-label>
-                    <mat-select [(value)]="genreSelected" [(ngModel)]="genreSelected" (selectionChange)="(getMoviesByGenre())">
+                    <mat-select [(value)]="genreSelected" [(ngModel)]="genreSelected" (selectionChange)="(getMoviesByGenre2())">
                         <mat-option *ngFor="let genre of genreList" [value]="genre">
                             {{genre.name}}
                         </mat-option>
