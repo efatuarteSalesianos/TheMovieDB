@@ -1,0 +1,17 @@
+<mat-dialog-content class="mat-typography">
+    <h1>{{person.name}}</h1>
+    <p><strong>Nacimiento: </strong>{{person.birthday | date:'dd/MM/yyyy'}}, {{person.place_of_birth}}</p>
+    <p><strong>URL: </strong>
+        <a href=(movie.homepage)>{{person.homepage}}</a>
+    </p>
+    <img class="imagen" [src]="getPhotoUrl(person.profile_path)" [alt]=(person.name)>
+    <h3>Biografía: </h3>
+    <p>{{person.biography}}</p>
+    <p><span><strong>Valoración: </strong></span>{{person.popularity}}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button color="primary" mat-dialog-close>Cancelar</button>
+    <button mat-button color="accent" [mat-dialog-close]="true" cdkFocusInitial>
+  Guardar
+</button>
+</mat-dialog-actions>
