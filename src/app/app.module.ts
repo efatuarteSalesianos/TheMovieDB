@@ -21,7 +21,6 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { FormsModule } from '@angular/forms';
 import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
 import { MovieDetailDialogComponent } from './components/dialogs/movie-detail-dialog/movie-detail-dialog.component';
-import { PeopleDialogComponent } from './components/dialogs/people-dialog/people-dialog.component';
 import { PeopleDetailDialogComponent } from './components/dialogs/people-detail-dialog/people-detail-dialog.component';
 
 @NgModule({
@@ -35,7 +34,6 @@ import { PeopleDetailDialogComponent } from './components/dialogs/people-detail-
     PeoplePopularItemComponent,
     SidenavComponent,
     MovieDetailDialogComponent,
-    PeopleDialogComponent,
     PeopleDetailDialogComponent
   ],
   imports: [

@@ -2,6 +2,8 @@ import { KnownFor } from './../../model/interfaces/people-popular.interface';
 import { Component, Input, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { PeoplePopular } from '../../model/interfaces/people-popular.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { PeopleDetailDialogComponent } from '../dialogs/people-detail-dialog/people-detail-dialog.component';
 
 @Component({
   selector: 'app-people-popular-item',
@@ -10,9 +12,9 @@ import { PeoplePopular } from '../../model/interfaces/people-popular.interface';
 })
 export class PeoplePopularItemComponent implements OnInit {
 
-  @Input() peopleInput: PeoplePopular | undefined;
+  @Input() peopleInput!: PeoplePopular;
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -34,4 +36,12 @@ export class PeoplePopularItemComponent implements OnInit {
       return [];
     }
   }
+
+  openDialogPersonDetail(id: number | undefined) {
+    this.dialog.open(PeopleDetailDialogComponent, {
+      width: '500px',
+      data: { personId: id }
+    });
+  }
+
 }
