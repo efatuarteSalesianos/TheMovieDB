@@ -29,7 +29,7 @@ export class MovieItemComponent implements OnInit {
   openDialogMovieDetail(id: number | undefined) {
     this.dialog.open(MovieDetailDialogComponent, {
       width: '500px',
-      data: { movieId: this.movieInput?.id }
+      data: { movieId: id }
     });
   }
 

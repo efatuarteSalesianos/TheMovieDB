@@ -42,8 +42,4 @@ export class MovieDetailDialogComponent implements OnInit {
     }
   }
 
-  convertDate(date: Date): string {
-    return this.movie.release_date.toLocaleString();
-  }
-
 }
