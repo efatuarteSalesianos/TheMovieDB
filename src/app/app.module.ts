@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
 import { MovieDetailDialogComponent } from './components/dialogs/movie-detail-dialog/movie-detail-dialog.component';
 import { PeopleDetailDialogComponent } from './components/dialogs/people-detail-dialog/people-detail-dialog.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { PeopleDetailDialogComponent } from './components/dialogs/people-detail-
     PeoplePopularItemComponent,
     SidenavComponent,
     MovieDetailDialogComponent,
-    PeopleDetailDialogComponent
+    PeopleDetailDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,17 +44,18 @@ import { PeopleDetailDialogComponent } from './components/dialogs/people-detail-
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    FlexLayoutModule,
     NgCircleProgressModule.forRoot({
       "backgroundStrokeWidth": 0,
       "backgroundPadding": 2,
       "radius": 40,
       "space": 10,
-      "unitsColor": "#000000",
+      "unitsColor": "#FFFFFF",
       "outerStrokeWidth": 1,
-      "outerStrokeColor": "#3f51b5",
+      "outerStrokeColor": "#86DC3D",
       "innerStrokeColor": "#3f51b5",
       "innerStrokeWidth": 5,
-      "titleColor": "#000000",
+      "titleColor": "#FFFFFF",
       "showSubtitle": false
     })
   ],

@@ -1,11 +1,22 @@
 <mat-card class="example-card">
-    <mat-card-content>
-        <img (click)="openDialogMovieDetail(movieInput?.id)" class="image" [src]='getPhotoUrl()' [alt]='(movieInput?.title)'>
-        <h2>{{movieInput?.title}}</h2>
-        <p>{{movieInput?.release_date | date: 'dd/MM/yyyy'}}</p>
+    <mat-card-content class="content">
+        <div class="image" fxLayout="row" fxLayoutAlign="start start">
+            <circle-progress [percent]='(movieInput.vote_average * 10)' [radius]="28" [backgroundColor]="'#0000000'" [titleFontSize]="'14px'" [outerStrokeWidth]="3" [innerStrokeWidth]="3" [outerStrokeColor]="'#86DC3D'" [innerStrokeColor]="'#FF4081'" [space]="5" [animation]="true"
+                [animationDuration]="400"></circle-progress>
+            <img (click)="openDialogMovieDetail(movieInput?.id)" class="image" [src]='getPhotoUrl()' [alt]='(movieInput?.title)'>
+        </div>
+        <p class="title" (click)="openDialogMovieDetail(movieInput?.id)">{{movieInput?.title}}</p>
+        <p><strong>Fecha de salida: </strong>{{movieInput?.release_date | date: 'dd/MM/yyyy'}}</p>
+        <p class="overview"><strong>Sinopsis: </strong>{{movieInput?.overview}}</p>
     </mat-card-content>
-    <mat-card-actions>
-        <circle-progress [percent]='(movieInput.vote_average * 10)' [radius]="35" [outerStrokeWidth]="1" [innerStrokeWidth]="3" [outerStrokeColor]="'#3f51b5'" [innerStrokeColor]="'#FF4081'" [animation]="true" [animationDuration]="400"></circle-progress>
-        <button style="margin-left: 40%;" mat-raised-button (click)="openDialogMovieDetail(movieInput?.id)" color="primary">Ver Detalles</button>
-    </mat-card-actions>
+    <div fxLayout="row" fxLayoutAlign="end end">
+        <mat-card-actions fxLayoutAlign="center center">
+            <button mat-icon-button color="warn">
+          <mat-icon>favorite_border</mat-icon>
+        </button>
+            <button mat-icon-button color="primary">
+          <mat-icon>playlist_add</mat-icon>
+        </button>
+        </mat-card-actions>
+    </div>
 </mat-card>
