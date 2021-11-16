@@ -1,5 +1,5 @@
-<div fxLayout="column" fxLayoutAlign="space-around start">
-    <div fxFlex="20">
+<div fxFlexFill fxLayout="column" fxLayoutAlign="space-around start">
+    <div fxFlex="10">
         <mat-form-field appearance="fill">
             <mat-label>Género</mat-label>
             <mat-select [(value)]="genreSelected" [(ngModel)]="genreSelected" (selectionChange)="(getMoviesByGenre2())">
@@ -10,18 +10,18 @@
         </mat-form-field>
         <p>Mostrando las películas más populares del género: {{genreSelected?.name}}</p>
     </div>
-    <div fxFlex fxLayout="column" fxLayoutAlign="space-around center">
+    <div fxFlex="80" fxLayout="column" fxLayoutAlign="space-around center">
         <div>
             <h2>Películas más populares:</h2>
         </div>
         <div>
-            <div fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayoutGap="15px grid" *ngIf="!moviesGenre">
-                <div fxFlex="16" *ngFor="let movie of moviesPopularList">
+            <div fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayoutGap="20px grid" *ngIf="!moviesGenre">
+                <div fxFlex="15" *ngFor="let movie of moviesPopularList">
                     <app-movie-item [movieInput]="movie"></app-movie-item>
                 </div>
             </div>
-            <div fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayoutGap="15px grid">
-                <div fxFlex="16" *ngFor="let movie of moviesGenre">
+            <div fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayoutGap="20px grid">
+                <div fxFlex="15" *ngFor="let movie of moviesGenre">
                     <app-movie-item [movieInput]="movie"></app-movie-item>
                 </div>
             </div>
