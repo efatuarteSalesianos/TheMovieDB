@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Genre } from '../../model/interfaces/genres.interface';
 import { MovieService } from '../../services/movie.service';
 import { Movie } from '../../model/interfaces/movies-popular.interface';
@@ -17,21 +18,23 @@ export class MoviesPopularListComponent implements OnInit {
   moviesGenre: Movie[] | undefined;
   genreSelected!: Genre;
 
-  constructor(private MovieService: MovieService, private GenreService: GenreService) { }
+  constructor(private movieService: MovieService, private genreService: GenreService, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.authService.setSessionId('session_id');
+    console.log(this.authService.getSessionId());
     this.getMoviesPopularList();
     this.getGenresList();
   }
 
   getMoviesPopularList() {
-    this.MovieService.getPopularMovies().subscribe(resultado => {
+    this.movieService.getPopularMovies().subscribe(resultado => {
       this.moviesPopularList = resultado.results;
     })
   }
 
   getGenresList() {
-    this.GenreService.getGenres().subscribe(resultado => {
+    this.genreService.getGenres().subscribe(resultado => {
       this.genreList = resultado.genres;
     })
   }
