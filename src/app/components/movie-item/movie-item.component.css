@@ -13,19 +13,36 @@
 
 .rating {
     position: absolute;
-    float: left;
-    margin-left: -56%;
+    top: 0px;
+    left: 20px;
+}
+
+.movie-image {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+    max-height: 300px;
+    margin-bottom: 7%;
+}
+
+.movie-image img {
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.movie-image:hover img {
+    transform: scale(1.2);
+    transition: transform 1s ease;
 }
 
 .image {
-    text-align: center;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 7%;
     max-width: 100%;
     max-height: 300px;
-    border-radius: 15px;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
 .title {
@@ -33,10 +50,26 @@
     font-weight: bold;
 }
 
-.overview {
-    position: absolute;
+.text {
+    position: relative;
+    font-size: 14px;
+    color: black;
     width: 90%;
+}
+
+.text-concat {
+    position: relative;
+    display: inline-block;
+    word-wrap: break-word;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    max-height: 2.4em;
+    line-height: 1.2em;
+    text-align: justify;
+}
+
+.text.ellipsis::after {
+    content: "...";
+    position: absolute;
+    right: -12px;
+    bottom: 4px;
 }

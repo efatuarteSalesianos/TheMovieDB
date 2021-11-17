@@ -1,17 +1,21 @@
 <mat-card class="example-card">
     <div fxLayout="row" fxLayoutAlign="center start">
+        <div class="movie-image">
+            <img (click)="openDialogMovieDetail(movieInput?.id)" class="image" [src]='getPhotoUrl()' [alt]='(movieInput?.title)'>
+        </div>
         <div class="rating">
             <circle-progress [percent]='(movieInput.vote_average * 10)' [radius]="28" [backgroundColor]="'#0000000'" [titleFontSize]="'14px'" [outerStrokeWidth]="3" [innerStrokeWidth]="3" [outerStrokeColor]="'#86DC3D'" [innerStrokeColor]="'#FF4081'" [space]="5" [animation]="true"
                 [animationDuration]="400"></circle-progress>
-        </div>
-        <div>
-            <img (click)="openDialogMovieDetail(movieInput?.id)" class="image" [src]='getPhotoUrl()' [alt]='(movieInput?.title)'>
         </div>
     </div>
     <mat-card-content class="content">
         <p class="title" (click)="openDialogMovieDetail(movieInput?.id)">{{movieInput?.title}}</p>
         <p><strong>Fecha de salida: </strong>{{movieInput?.release_date | date: 'dd/MM/yyyy'}}</p>
-        <p class="overview"><strong>Sinopsis: </strong>{{movieInput?.overview}}</p>
+        <div class="text ellipsis">
+            <span class="text-concat">
+            {{movieInput?.overview}}
+          </span>
+        </div>
     </mat-card-content>
     <div fxLayout="row" fxLayoutAlign="end end">
         <mat-card-actions fxLayoutAlign="center center">
