@@ -23,6 +23,7 @@ import { SidenavComponent } from './components/shared/sidenav/sidenav.component'
 import { MovieDetailDialogComponent } from './components/dialogs/movie-detail-dialog/movie-detail-dialog.component';
 import { PeopleDetailDialogComponent } from './components/dialogs/people-detail-dialog/people-detail-dialog.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AddToListDialogComponent } from './components/dialogs/add-to-list-dialog/add-to-list-dialog.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     SidenavComponent,
     MovieDetailDialogComponent,
     PeopleDetailDialogComponent,
+    AddToListDialogComponent,
   ],
   imports: [
     BrowserModule,

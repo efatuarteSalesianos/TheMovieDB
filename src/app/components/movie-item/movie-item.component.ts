@@ -1,3 +1,4 @@
+import { AddToListDialogComponent } from './../dialogs/add-to-list-dialog/add-to-list-dialog.component';
 import { environment } from './../../../environments/environment';
 import { Movie } from '../../model/interfaces/movies-popular.interface';
 import { Component, Input, OnInit } from '@angular/core';
@@ -28,6 +29,13 @@ export class MovieItemComponent implements OnInit {
 
   openDialogMovieDetail(id: number | undefined) {
     this.dialog.open(MovieDetailDialogComponent, {
+      width: '500px',
+      data: { movieId: id }
+    });
+  }
+
+  addToPlaylistDialog(id: number | undefined) {
+    this.dialog.open(AddToListDialogComponent, {
       width: '500px',
       data: { movieId: id }
     });

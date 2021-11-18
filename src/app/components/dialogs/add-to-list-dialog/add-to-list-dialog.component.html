@@ -1,0 +1,30 @@
+<div fxFlexFill fxLayout="column" fxLayoutAlign="center start">
+    <div fxFlex="20" *ngIf="lists.length>0">
+        <h2>Selecciona una lista de reproducción</h2>
+        <mat-form-field appearance="fill">
+            <mat-label>Seleccione una lista</mat-label>
+            <mat-select [(ngModel)]="listSelected">
+                <mat-option *ngFor="let l of lists" [value]="l.id">
+                    {{l.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxFlex="70" fxLayout="column" fxLayoutAlign="center start">
+        <div fxLayoutAlign="center start">
+            <h2>Crear una nueva lista de reproducción:</h2>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="start center">
+            <mat-form-field appearance="fill" fxFlex="60">
+                <mat-label>Nombre de la lista</mat-label>
+                <input matInput placeholder="Nombre" [(ngModel)]="listDTO.name" name="name">
+            </mat-form-field>
+            <mat-form-field appearance="fill" fxFlex="90">
+                <mat-label>Descripción</mat-label>
+                <textarea rows="4" matInput placeholder="Descripción" [(ngModel)]="listDTO.description" name="description"></textarea>
+            </mat-form-field>
+            <button class="save" mat-raised-button color="primary" (click)="createList()"><mat-icon class="icon">save</mat-icon>Crear</button>
+        </div>
+    </div>
+</div>

@@ -12,17 +12,15 @@ import { GenreService } from '../../services/genre.service';
 })
 export class MoviesPopularListComponent implements OnInit {
 
-  moviesPopularList: Movie[] | undefined;
+  moviesPopularList: Movie[] = [];
 
-  genreList: Genre[] | undefined;
-  moviesGenre: Movie[] | undefined;
-  genreSelected!: Genre;
+  genreList: Genre[] = [];
+  moviesGenre: Movie[] = [];
+  genreSelected!: number;
 
   constructor(private movieService: MovieService, private genreService: GenreService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.authService.setSessionId('session_id');
-    console.log(this.authService.getSessionId());
     this.getMoviesPopularList();
     this.getGenresList();
   }
@@ -30,6 +28,7 @@ export class MoviesPopularListComponent implements OnInit {
   getMoviesPopularList() {
     this.movieService.getPopularMovies().subscribe(resultado => {
       this.moviesPopularList = resultado.results;
+      this.moviesGenre = this.moviesPopularList;
     })
   }
 
@@ -47,7 +46,14 @@ export class MoviesPopularListComponent implements OnInit {
   } */
 
   getMoviesByGenre2() {
-    if(this.genreSelected)
-      this.moviesGenre = this.moviesPopularList?.filter(movie => movie.genre_ids.includes(this.genreSelected.id));
+    if(this.genreSelected && this.genreSelected != 0) {
+      this.moviesGenre = this.moviesPopularList?.filter(movie => movie.genre_ids.includes(this.genreSelected));
+    } else if(this.genreSelected == 0) {
+      this.moviesGenre = this.moviesPopularList;
+    }
+  }
+
+  getGenreSelectedName() {
+    return this.genreList.find(x => x.id == this.genreSelected)?.name;
   }
 }
