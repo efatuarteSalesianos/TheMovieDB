@@ -1,6 +1,6 @@
-<div fxFlexFill fxLayout="column" fxLayoutAlign="space-around center">
-    <h1 fxFlex="10">Viendo películas de la lista</h1>
-    <div fxFlex="80" fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="20px grid">
+<div fxFlexFill fxLayout="column" fxLayoutAlign="center center">
+    <h1 style="margin-top: 2%;" fxFlex="10">Viendo películas de la lista</h1>
+    <div fxFlex="80" fxLayout="row wrap" fxLayoutAlign="space-around start" fxLayoutGap="20px grid">
         <div fxFlex="15" *ngFor="let movie of movies">
             <app-movie-item [movieInput]="movie"></app-movie-item>
         </div>
