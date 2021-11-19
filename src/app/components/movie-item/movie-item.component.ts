@@ -37,6 +37,7 @@ export class MovieItemComponent implements OnInit {
   addToPlaylistDialog(id: number | undefined) {
     this.dialog.open(AddToListDialogComponent, {
       width: '500px',
+      height: '550px',
       data: { movieId: id }
     });
   }

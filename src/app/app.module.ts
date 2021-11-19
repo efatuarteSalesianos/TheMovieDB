@@ -24,6 +24,7 @@ import { MovieDetailDialogComponent } from './components/dialogs/movie-detail-di
 import { PeopleDetailDialogComponent } from './components/dialogs/people-detail-dialog/people-detail-dialog.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AddToListDialogComponent } from './components/dialogs/add-to-list-dialog/add-to-list-dialog.component';
+import { ListDetailsComponent } from './components/list-details/list-details.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AddToListDialogComponent } from './components/dialogs/add-to-list-dialo
     MovieDetailDialogComponent,
     PeopleDetailDialogComponent,
     AddToListDialogComponent,
+    ListDetailsComponent,
   ],
   imports: [
     BrowserModule,

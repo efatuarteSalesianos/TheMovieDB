@@ -10,7 +10,6 @@
             </mat-select>
         </mat-form-field>
     </div>
-    <mat-divider></mat-divider>
     <div fxFlex="70" fxLayout="column" fxLayoutAlign="center start">
         <div fxLayoutAlign="center start">
             <h2>Crear una nueva lista de reproducción:</h2>
@@ -24,7 +23,8 @@
                 <mat-label>Descripción</mat-label>
                 <textarea rows="4" matInput placeholder="Descripción" [(ngModel)]="listDTO.description" name="description"></textarea>
             </mat-form-field>
-            <button class="save" mat-raised-button color="primary" (click)="createList()"><mat-icon class="icon">save</mat-icon>Crear</button>
+            <button class="save" mat-raised-button color="primary" (click)="createList()" *ngIf="listDTO.name"><mat-icon class="icon">save</mat-icon>Crear</button>
+            <button class="save" mat-raised-button color="primary" (click)="addMovieToList()" [routerLink]="['/list/', listSelected]"><mat-icon class="icon">add</mat-icon>Añadir</button>
         </div>
     </div>
 </div>
