@@ -37,7 +37,7 @@ export class ListService {
     return this.http.post(requestUrl, addTolist, DEFAULT_HEADERS);
   }
 
-  getList(listId: number): Observable<ListDetailResponse> {
+  getList(listId: string): Observable<ListDetailResponse> {
     let requestUrl = `${environment.api_base_url}/list/${listId}?api_key=${environment.api_key}&language=${environment.lang}`;
     return this.http.get<ListDetailResponse>(requestUrl, DEFAULT_HEADERS);
   }

@@ -19,10 +19,10 @@
     </mat-card-content>
     <div fxLayout="row" fxLayoutAlign="end end">
         <mat-card-actions fxLayoutAlign="center center">
-            <button mat-icon-button color="warn">
+            <button (click)="addFavorite()" mat-icon-button color="warn">
           <mat-icon>favorite_border</mat-icon>
         </button>
-            <button mat-icon-button color="primary" (click)="addToPlaylistDialog(movieInput?.id)">
+            <button mat-icon-button color="primary" (click)="addToPlayList()">
           <mat-icon>playlist_add</mat-icon>
         </button>
         </mat-card-actions>

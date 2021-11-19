@@ -4,7 +4,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { listDTO } from 'src/app/model/dto/list.dto';
 import { addTolistDTO } from 'src/app/model/dto/addToList.dto';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 export interface AddToListDialogData {
   movieId: number
@@ -23,6 +23,7 @@ export class AddToListDialogComponent implements OnInit {
   listSelected!: number;
 
   constructor(@Inject(MAT_DIALOG_DATA) private data: AddToListDialogData,
+  public dialogRef: MatDialogRef<AddToListDialogComponent>,
   private listService: ListService, private dialog: MatDialog, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
@@ -48,6 +49,7 @@ export class AddToListDialogComponent implements OnInit {
     this.addTolistDTO.media_id = this.data.movieId;
     this.listService.addMovieToList(this.listSelected, this.addTolistDTO).subscribe(result => {
       this.snackBar.open('Película añadida', 'Aceptar');
+      this.dialogRef.close();
     });
   }
 }

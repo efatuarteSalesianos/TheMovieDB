@@ -5,11 +5,13 @@ import { PeoplePopularListComponent } from '../components/people-popular-list/pe
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SessionComponent } from '../components/session/session.component';
 
 const routes: Routes = [
   { path: 'movies-popular', component: MoviesPopularListComponent },
   { path: 'people-popular', component: PeoplePopularListComponent },
   { path: 'list/:id', component: ListDetailsComponent},
+  {path: 'loginsuccess', component: SessionComponent},
   { path: '',   redirectTo: '/movies-popular', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
