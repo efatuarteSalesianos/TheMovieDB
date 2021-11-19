@@ -17,8 +17,10 @@ export class ListDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.listId = params['id'];
+      console.log("ID: " + this.listId);
       this.listService.getList(this.listId).subscribe(result => {
         this.movies = result.items;
+        console.log(this.movies);
       })
     })
   }

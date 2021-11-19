@@ -1,5 +1,5 @@
 <div fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayoutGap="20px grid">
     <div fxFlex="15" *ngFor="let movie of movies">
-        <app-movie-item></app-movie-item>
+        <app-movie-item [movieInput]="movie"></app-movie-item>
     </div>
 </div>
