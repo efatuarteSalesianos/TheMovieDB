@@ -1,0 +1,41 @@
+services:
+  db:
+    image: mysql:5.7.28
+    volumes:
+      - wordpress_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=wp_database
+      - MYSQL_USER=wp_user
+      - MYSQL_PASSWORD=wp_password
+    networks:
+      - wordpress-net
+  web:
+    image: wordpress:latest
+    depends_on:
+      - db
+    volumes:
+      - wordpress_data:/var/html/www
+    environment:
+      - WORDPRESS_DB_USER=wp_user
+      - WORDPRESS_DB_PASSWORD=wp_password
+      - WORDPRESS_DB_HOST=db
+    ports:
+      - 80:80
+    networks:
+      - wordpress-net
+  admin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    environment:
+      - PMA_ARBITRARY=1
+    ports:
+      - 8080:80
+    networks:
+      - wordpress-net
+volumes:
+  wordpress_data:
+  wordpress_mysql_data:
+networks:
+  wordpress-net:

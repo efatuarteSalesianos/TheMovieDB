@@ -4,6 +4,7 @@ import { environment } from './../../environments/environment.prod';
 import { Observable } from 'rxjs';
 import { MoviesPopularResponse } from '../model/interfaces/movies-popular.interface';
 import { MovieResponse } from '../model/interfaces/movie.interface';
+import { AddToFavoriteDTO } from '../model/dto/addToFavorite.dto';
 
 const MOVIE_BASE_URL = 'movie';
 const DEFAULT_HEADERS = {
@@ -33,5 +34,10 @@ export class MovieService {
   getMoviesByGenre(id: number): Observable<MoviesPopularResponse> {
     let url = `${environment.api_base_url}/discover/movie/?api_key=${environment.api_key}&language=${environment.lang}&with_genres=${id}`;
     return this.http.get<MoviesPopularResponse>(url, DEFAULT_HEADERS);
+  }
+
+  addMovieToFavourite(id: number, favoriteDTO: AddToFavoriteDTO) {
+    let url = `${environment.api_base_url}/account/{{account_id}}/favorite/?api_key=${environment.api_key}`;
+    return this.http.post(url, favoriteDTO, DEFAULT_HEADERS);
   }
 }

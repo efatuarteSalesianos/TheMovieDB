@@ -26,7 +26,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AddToListDialogComponent } from './components/dialogs/add-to-list-dialog/add-to-list-dialog.component';
 import { ListDetailsComponent } from './components/list-details/list-details.component';
 import { LoginDialogComponent } from './components/dialogs/login-dialog/login-dialog.component';
-import { SessionComponent } from './components/session/session.component';
+import { SessionComponent } from './components/shared/session/session.component';
 
 @NgModule({
   declarations: [

@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>MovieDB</title>
-</head>
-
-<body>
-    <div class="container-fluid" style="margin-top: 20px;">
+<div class="container-fluid" style="margin-top: 20px;">
+    <div class="row">
+        <h2>Actores y actrices más populares:</h2>
         <div class="row">
-            <h2>Actores y actrices más populares:</h2>
-            <div class="row">
-                <div class="col-3" *ngFor="let people of peoplePopularList">
-                    <app-people-popular-item [peopleInput]="people"></app-people-popular-item>
-                </div>
+            <div class="col-3" *ngFor="let people of peoplePopularList">
+                <app-people-popular-item [peopleInput]="people"></app-people-popular-item>
             </div>
         </div>
     </div>
-</body>
-
-</html>
+</div>

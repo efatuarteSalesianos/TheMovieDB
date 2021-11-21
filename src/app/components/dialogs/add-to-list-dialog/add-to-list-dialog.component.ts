@@ -2,7 +2,7 @@ import { List } from './../../../model/interfaces/list.interface';
 import { ListService } from './../../../services/list.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { listDTO } from 'src/app/model/dto/list.dto';
-import { addTolistDTO } from 'src/app/model/dto/addToList.dto';
+import { AddTolistDTO } from 'src/app/model/dto/addToList.dto';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -18,7 +18,7 @@ export interface AddToListDialogData {
 export class AddToListDialogComponent implements OnInit {
 
   listDTO = new listDTO();
-  addTolistDTO = new addTolistDTO();
+  addTolistDTO = new AddTolistDTO();
   lists: List[] = [];
   listSelected!: number;
 

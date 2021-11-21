@@ -5,7 +5,7 @@ import { PeoplePopularListComponent } from '../components/people-popular-list/pe
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SessionComponent } from '../components/session/session.component';
+import { SessionComponent } from '../components/shared/session/session.component';
 
 const routes: Routes = [
   { path: 'movies-popular', component: MoviesPopularListComponent },

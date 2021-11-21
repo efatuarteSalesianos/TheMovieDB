@@ -9,10 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class SessionComponent implements OnInit {
 
-  constructor(
-    private authService: AuthService,
-    private router: Router
-    ) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.authService.getSessionId().subscribe(resp => {

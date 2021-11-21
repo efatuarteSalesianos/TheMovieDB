@@ -1,4 +1,4 @@
-export class addTolistDTO {
+export class AddTolistDTO {
 
   media_id: number;
 

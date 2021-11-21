@@ -1,4 +1,4 @@
-import { addTolistDTO } from './../model/dto/addToList.dto';
+import { AddTolistDTO } from './../model/dto/addToList.dto';
 import { listDTO } from './../model/dto/list.dto';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -32,7 +32,7 @@ export class ListService {
     return this.http.post<listDTO>(requestUrl, list, DEFAULT_HEADERS);
   }
 
-  addMovieToList(listId: number, addTolist: addTolistDTO) {
+  addMovieToList(listId: number, addTolist: AddTolistDTO) {
     let requestUrl = `${environment.api_base_url}/list/${listId}/add_item?api_key=${environment.api_key}&session_id=${SESSION_ID}`;
     return this.http.post(requestUrl, addTolist, DEFAULT_HEADERS);
   }
