@@ -8,6 +8,7 @@ import { MovieDetailDialogComponent } from '../dialogs/movie-detail-dialog/movie
 import { AuthService } from 'src/app/services/auth.service';
 import { MovieService } from 'src/app/services/movie.service';
 import { AddToFavoriteDTO } from '../../model/dto/addToFavorite.dto';
+import { MovieItem } from 'src/app/model/interfaces/list-detail.interface';
 @Component({
   selector: 'app-movie-item',
   templateUrl: './movie-item.component.html',
@@ -16,6 +17,7 @@ import { AddToFavoriteDTO } from '../../model/dto/addToFavorite.dto';
 export class MovieItemComponent implements OnInit {
 
   favouriteDTO = new AddToFavoriteDTO();
+  favMovies: MovieItem[] = [];
 
   @Input() movieInput!: Movie;
 
@@ -60,12 +62,17 @@ export class MovieItemComponent implements OnInit {
     this.dialog.open(AddToListDialogComponent, {
       width: '500px',
       height: '550px',
-      disableClose: true,
       data: { movieId: id }
     });
   }
 
-  addFavorite() {
+  favoriteMovies() {
+    this.movieService.getFavoriteMovies().subscribe(result => {
+      this.favMovies = result.results;
+    });
+  }
+
+  markFavorite() {
     if(this.authService.isLogged()) {
       this.movieService.addMovieToFavourite(this.movieInput.id, this.favouriteDTO);
     } else {

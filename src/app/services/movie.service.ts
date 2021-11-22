@@ -1,3 +1,4 @@
+import { FavoriteListResponse } from './../model/interfaces/favorite-list.interface';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from './../../environments/environment.prod';
@@ -39,5 +40,10 @@ export class MovieService {
   addMovieToFavourite(id: number, favoriteDTO: AddToFavoriteDTO) {
     let url = `${environment.api_base_url}/account/{{account_id}}/favorite/?api_key=${environment.api_key}`;
     return this.http.post(url, favoriteDTO, DEFAULT_HEADERS);
+  }
+
+  getFavoriteMovies(): Observable<FavoriteListResponse> {
+    let url = ``;
+    return this.http.get<FavoriteListResponse>(url, DEFAULT_HEADERS);
   }
 }

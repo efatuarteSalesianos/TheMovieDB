@@ -2,8 +2,6 @@ import { ListService } from './../../services/list.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/model/interfaces/movies-popular.interface';
-import { findLast } from '@angular/compiler/src/directive_resolver';
-import { List } from 'src/app/model/interfaces/list.interface';
 
 @Component({
   selector: 'app-list-details',

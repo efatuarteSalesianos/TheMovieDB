@@ -28,4 +28,8 @@ export class SidenavComponent implements OnInit {
       disableClose: true
     });
   }
+
+  doLogout() {
+    return localStorage.removeItem('session_id');
+  }
 }

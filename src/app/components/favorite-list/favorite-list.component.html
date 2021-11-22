@@ -1,0 +1,14 @@
+<div fxFlexFill fxLayout="column" fxLayoutAlign="space-around start">
+    <div fxFlex="80" fxLayout="column" fxLayoutAlign="space-around center">
+        <div>
+            <h2>Películas más populares:</h2>
+        </div>
+        <div>
+            <div fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayoutGap="20px grid">
+                <div fxFlex="15" *ngFor="let movie of favoriteMovies">
+                    <app-movie-item [movieInput]="movie"></app-movie-item>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

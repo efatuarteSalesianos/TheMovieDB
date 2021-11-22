@@ -18,11 +18,10 @@
             <mat-toolbar-row>
                 <button mat-icon-button color="accent" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
                 <span>TheMovieDB</span>
-                <button *ngIf="!isLogged()" style="margin-left: 2%" mat-stroked-button color="accent">Iniciar Sesión</button>
+                <button *ngIf="!isLogged()" style="margin-left: 2%" mat-stroked-button color="accent" (click)="openLoginDialog()">Iniciar Sesión</button>
                 <span class="example-spacer"></span>
                 <ng-container [ngSwitch]="currentPage">
-                    <button *ngSwitchCase="'movies-popular'" mat-icon-button class="example-icon favorite-icon"><mat-icon>add</mat-icon></button>
-                    <button *ngSwitchCase="'people-popular'" mat-icon-button class="example-icon favorite-icon"><mat-icon>add</mat-icon></button>
+                    <button *ngIf="isLogged()" mat-raised-button color="accent" (click)="doLogout()">Salir</button>
                 </ng-container>
             </mat-toolbar-row>
         </mat-toolbar>

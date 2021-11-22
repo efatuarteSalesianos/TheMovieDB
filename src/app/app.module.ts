@@ -27,6 +27,7 @@ import { AddToListDialogComponent } from './components/dialogs/add-to-list-dialo
 import { ListDetailsComponent } from './components/list-details/list-details.component';
 import { LoginDialogComponent } from './components/dialogs/login-dialog/login-dialog.component';
 import { SessionComponent } from './components/shared/session/session.component';
+import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { SessionComponent } from './components/shared/session/session.component'
     ListDetailsComponent,
     LoginDialogComponent,
     SessionComponent,
+    FavoriteListComponent,
   ],
   imports: [
     BrowserModule,
