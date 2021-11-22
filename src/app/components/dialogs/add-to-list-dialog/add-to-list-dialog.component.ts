@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { List } from './../../../model/interfaces/list.interface';
 import { ListService } from './../../../services/list.service';
 import { Component, Inject, OnInit } from '@angular/core';
@@ -5,6 +6,7 @@ import { listDTO } from 'src/app/model/dto/list.dto';
 import { AddTolistDTO } from 'src/app/model/dto/addToList.dto';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CreateListResponse } from 'src/app/model/interfaces/create-list.interface';
 
 export interface AddToListDialogData {
   movieId: number
@@ -24,7 +26,7 @@ export class AddToListDialogComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) private data: AddToListDialogData,
   public dialogRef: MatDialogRef<AddToListDialogComponent>,
-  private listService: ListService, private dialog: MatDialog, private snackBar: MatSnackBar) { }
+  private listService: ListService, private dialog: MatDialog, private snackBar: MatSnackBar, private route: Router) { }
 
   ngOnInit(): void {
     this.listService.getLists().subscribe(result => {
@@ -34,13 +36,18 @@ export class AddToListDialogComponent implements OnInit {
 
   createList() {
     if(this.listDTO.name===""){
-      this.snackBar.open('No se puede crear una lista sin nombre', 'Aceptar');
+      this.snackBar.open('No se puede crear una lista sin nombre', 'Aceptar', { duration: 3000 });
     }
     else {
     this.listService.createList(this.listDTO).subscribe(result => {
-      this.listDTO = result;
-      this.snackBar.open('Se ha creado la lista correctamente', 'Aceptar');
-      history.go(0)
+      this.listSelected = result.list_id;
+      this.addTolistDTO.media_id = this.data.movieId;
+      this.listService.addMovieToList(this.listSelected, this.addTolistDTO).subscribe(result => {
+        this.snackBar.open('Película añadida', 'Aceptar', { duration: 3000 });
+        this.dialogRef.close();
+        this.route.navigate(['/list/', this.listSelected])
+      });
+      this.snackBar.open('Se ha creado la lista correctamente', 'Aceptar', { duration: 3000 });
       });
     }
   }
@@ -48,7 +55,7 @@ export class AddToListDialogComponent implements OnInit {
   addMovieToList() {
     this.addTolistDTO.media_id = this.data.movieId;
     this.listService.addMovieToList(this.listSelected, this.addTolistDTO).subscribe(result => {
-      this.snackBar.open('Película añadida', 'Aceptar');
+      this.snackBar.open('Película añadida', 'Aceptar', { duration: 3000 });
       this.dialogRef.close();
     });
   }

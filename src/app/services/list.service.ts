@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ListResponse } from '../model/interfaces/list.interface';
 import { ListDetailResponse } from '../model/interfaces/list-detail.interface';
+import { CreateListResponse } from '../model/interfaces/create-list.interface';
 import { environment } from 'src/environments/environment.prod';
 
 const LIST_BASE_URL = 'account/{account_id}/lists';
@@ -27,9 +28,9 @@ export class ListService {
     return this.http.get<ListResponse>(requestUrl, DEFAULT_HEADERS)
   }
 
-  createList(list: listDTO): Observable<listDTO> {
+  createList(list: listDTO): Observable<CreateListResponse> {
     let requestUrl = `${environment.api_base_url}/list?api_key=${environment.api_key}&session_id=${SESSION_ID}`;
-    return this.http.post<listDTO>(requestUrl, list, DEFAULT_HEADERS);
+    return this.http.post<CreateListResponse>(requestUrl, list, DEFAULT_HEADERS);
   }
 
   addMovieToList(listId: number, addTolist: AddTolistDTO) {

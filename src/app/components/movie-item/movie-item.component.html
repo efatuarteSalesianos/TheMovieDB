@@ -19,12 +19,15 @@
     </mat-card-content>
     <div fxLayout="row" fxLayoutAlign="end end">
         <mat-card-actions fxLayoutAlign="center center">
-            <button (click)="markFavorite()" mat-icon-button color="warn">
-          <mat-icon>favorite_border</mat-icon>
-        </button>
+            <button *ngIf="!isFav" (click)="markFavorite()" mat-icon-button color="warn">
+            <mat-icon>favorite_border</mat-icon>
+          </button>
+            <button *ngIf="isFav" (click)="markFavorite()" mat-icon-button color="warn">
+            <mat-icon>favorite</mat-icon>
+          </button>
             <button mat-icon-button color="primary" (click)="addToPlayList()">
-          <mat-icon>playlist_add</mat-icon>
-        </button>
+            <mat-icon>playlist_add</mat-icon>
+          </button>
         </mat-card-actions>
     </div>
 </mat-card>

@@ -23,8 +23,8 @@
                 <mat-label>Descripción</mat-label>
                 <textarea rows="4" matInput placeholder="Descripción" [(ngModel)]="listDTO.description" name="description"></textarea>
             </mat-form-field>
-            <button class="save" mat-raised-button color="primary" (click)="createList()" *ngIf="listDTO.name"><mat-icon class="icon">save</mat-icon>Crear</button>
-            <button class="save" mat-raised-button color="primary" (click)="addMovieToList()" [routerLink]="['/list/', listSelected]"><mat-icon class="icon">add</mat-icon>Añadir</button>
+            <button fxFlex="24" class="save" mat-raised-button color="primary" (click)="createList()" *ngIf="listDTO.name"><mat-icon class="icon">save</mat-icon>Crear</button>
+            <button fxFlex="25" class="save" mat-raised-button color="primary" (click)="addMovieToList()" [routerLink]="['/list/', listSelected]"><mat-icon class="icon">add</mat-icon>Añadir</button>
         </div>
     </div>
 </div>
