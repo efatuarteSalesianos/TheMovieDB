@@ -45,7 +45,7 @@ export class MovieService {
   }
 
   getFavoriteMovies(): Observable<FavoriteListResponse> {
-    let url = `${environment.api_base_url}/account/{{account_id}}/favorite/movies/?api_key=${environment.api_key}&session_id=${SESSION_ID}&language=${environment.lang}&sort_by=created_at.asc&page=1`;
+    let url = `${environment.api_base_url}/account/{account_id}/favorite/movies?api_key=${environment.api_key}&language=${environment.lang}&sort_by=created_at.asc&page=1&session_id=${SESSION_ID}`;
     return this.http.get<FavoriteListResponse>(url, DEFAULT_HEADERS);
   }
 
