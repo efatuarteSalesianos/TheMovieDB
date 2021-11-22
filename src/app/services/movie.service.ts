@@ -40,7 +40,7 @@ export class MovieService {
   }
 
   addMovieToFavourite(favoriteDTO: AddToFavoriteDTO) {
-    let url = `${environment.api_base_url}/account/{{account_id}}/favorite/?api_key=${environment.api_key}`;
+    let url = `${environment.api_base_url}/account/{account_id}/favorite?api_key=${environment.api_key}&session_id=${SESSION_ID}`;
     return this.http.post(url, favoriteDTO, DEFAULT_HEADERS);
   }
 

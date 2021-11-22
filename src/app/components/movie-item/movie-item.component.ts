@@ -10,6 +10,7 @@ import { MovieDetailDialogComponent } from '../dialogs/movie-detail-dialog/movie
 import { AuthService } from 'src/app/services/auth.service';
 import { MovieService } from 'src/app/services/movie.service';
 import { AddToFavoriteDTO } from '../../model/dto/addToFavorite.dto';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-movie-item',
   templateUrl: './movie-item.component.html',
@@ -23,7 +24,8 @@ export class MovieItemComponent implements OnInit {
 
   @Input() movieInput!: Movie;
 
-  constructor(private movieService: MovieService, private authService: AuthService, private dialog: MatDialog, private route: Router) { }
+  constructor(private movieService: MovieService, private authService: AuthService, private dialog: MatDialog, private route: Router,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.isFavorite();
@@ -79,8 +81,9 @@ export class MovieItemComponent implements OnInit {
     if(this.authService.isLogged()) {
       this.favouriteDTO.media_id = this.movieInput.id;
       this.favouriteDTO.favorite = !this.isFav;
-      this.movieService.addMovieToFavourite(this.favouriteDTO);
-      this.route.navigate(['/favorites']);
+      this.movieService.addMovieToFavourite(this.favouriteDTO).subscribe(result => {
+        history.go(0);
+      });
     } else {
       this.openLoginDialog();
     }

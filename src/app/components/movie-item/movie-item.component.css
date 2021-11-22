@@ -8,7 +8,6 @@
 .content {
     background-color: #F6F6F6;
     height: 85px;
-    z-index: 1;
 }
 
 .rating {
@@ -62,7 +61,7 @@
     display: inline-block;
     word-wrap: break-word;
     overflow: hidden;
-    max-height: 2.4em;
+    max-height: 2.3em;
     line-height: 1.2em;
     text-align: justify;
 }

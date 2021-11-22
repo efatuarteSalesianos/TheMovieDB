@@ -4,8 +4,8 @@ export class AddToFavoriteDTO {
   favorite:   boolean;
 
   constructor() {
-    this.media_type = '';
+    this.media_type = 'movie';
     this.media_id = 0;
-    this.favorite = false;
+    this.favorite = true;
   }
 }
