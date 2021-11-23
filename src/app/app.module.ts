@@ -28,6 +28,7 @@ import { ListDetailsComponent } from './components/list-details/list-details.com
 import { LoginDialogComponent } from './components/dialogs/login-dialog/login-dialog.component';
 import { SessionComponent } from './components/shared/session/session.component';
 import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
+import { GenreFilterPipe } from './components/pipes/genre-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { FavoriteListComponent } from './components/favorite-list/favorite-list.
     LoginDialogComponent,
     SessionComponent,
     FavoriteListComponent,
+    GenreFilterPipe,
   ],
   imports: [
     BrowserModule,

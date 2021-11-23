@@ -16,7 +16,7 @@ export class MoviesPopularListComponent implements OnInit {
 
   genreList: Genre[] = [];
   moviesGenre: Movie[] = [];
-  genreSelected!: number;
+  genres: Genre[] = [];
 
   constructor(private movieService: MovieService, private genreService: GenreService, private authService: AuthService) { }
 
@@ -45,15 +45,11 @@ export class MoviesPopularListComponent implements OnInit {
       })
   } */
 
-  getMoviesByGenre2() {
-    if(this.genreSelected && this.genreSelected != 0) {
-      this.moviesGenre = this.moviesPopularList?.filter(movie => movie.genre_ids.includes(this.genreSelected));
-    } else if(this.genreSelected == 0) {
-      this.moviesGenre = this.moviesPopularList;
+  /* getGenreSelectedName() {
+    if(this.genres && this.genres.length != 0) {
+      for(let i=0; i<this.genres.length; i++)
+        return this.genreList.find(x => x.id == this.genres[i])?.name;
     }
-  }
-
-  getGenreSelectedName() {
-    return this.genreList.find(x => x.id == this.genreSelected)?.name;
-  }
+    return '';
+  } */
 }

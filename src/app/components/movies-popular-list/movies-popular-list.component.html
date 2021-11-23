@@ -3,14 +3,13 @@
         <h3>Seleccione un género:</h3>
         <mat-form-field appearance="fill">
             <mat-label>Seleccione un género</mat-label>
-            <mat-select [(ngModel)]="genreSelected" (selectionChange)="(getMoviesByGenre2())">
-                <mat-option value="0">Ver Todas</mat-option>
-                <mat-option *ngFor="let genre of genreList" [value]="genre.id">
+            <mat-select [(ngModel)]="genres" multiple>
+                <mat-option *ngFor="let genre of genreList" [value]="genre">
                     {{genre.name}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        <h3 *ngIf="genreSelected">Mostrando las películas más populares de {{getGenreSelectedName()}}</h3>
+        <h3 *ngIf="genres.length != 0">Mostrando las películas más populares de <span *ngFor="let genre of genres">{{genre.name}}, </span></h3>
     </div>
     <div fxFlex="80" fxLayout="column" fxLayoutAlign="space-around center" *ngIf="moviesGenre.length>0">
         <div>
@@ -18,7 +17,7 @@
         </div>
         <div>
             <div fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayoutGap="20px grid">
-                <div fxFlex="15" *ngFor="let movie of moviesGenre">
+                <div fxFlex="15" *ngFor="let movie of moviesGenre | genreFilter: genres">
                     <app-movie-item [movieInput]="movie"></app-movie-item>
                 </div>
             </div>
