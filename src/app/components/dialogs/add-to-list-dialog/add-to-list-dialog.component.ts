@@ -6,7 +6,8 @@ import { listDTO } from 'src/app/model/dto/list.dto';
 import { AddTolistDTO } from 'src/app/model/dto/addToList.dto';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { CreateListResponse } from 'src/app/model/interfaces/create-list.interface';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 export interface AddToListDialogData {
   movieId: number
@@ -26,7 +27,8 @@ export class AddToListDialogComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) private data: AddToListDialogData,
   public dialogRef: MatDialogRef<AddToListDialogComponent>,
-  private listService: ListService, private dialog: MatDialog, private snackBar: MatSnackBar, private route: Router) { }
+  private listService: ListService, private dialog: MatDialog, private snackBar: MatSnackBar, private route: Router
+  , private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.listService.getLists().subscribe(result => {
@@ -59,4 +61,9 @@ export class AddToListDialogComponent implements OnInit {
       this.dialogRef.close();
     });
   }
+
+  listForm = this.fb.group({
+    name: ['', Validators.required],
+    description: ['']
+  });
 }
