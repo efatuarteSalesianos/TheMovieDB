@@ -37,7 +37,7 @@ export class AddToListDialogComponent implements OnInit {
   }
 
   createList() {
-    if(this.listDTO.name===""){
+    if(this.listForm.get('name')?.invalid){
       this.snackBar.open('No se puede crear una lista sin nombre', 'Aceptar', { duration: 3000 });
     }
     else {
